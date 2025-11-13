@@ -7037,6 +7037,7 @@ declare interface Java {
 declare class NotFullyTyped {
   [s: string]: any;
   static [s: string]: any;
+  constructor(...props: any[]): void;
 }
 
 type NBTType =
