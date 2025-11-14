@@ -8323,14 +8323,63 @@ declare class Vector2f {
 }
 declare class JavaBufferedImage extends NotFullyTyped {}
 
-declare class JavaGL11 extends NotFullyTyped {}
+declare class JavaGL11 extends NotFullyTyped {
+  static GL_LINES: 0x1;
+  static GL_TRIANGLES: 0x4;
+  static GL_FLOAT: 0x1406;
+  static GL_BLEND: 0xbe2;
+  static GL_TEXTURE_2D: 0xde1;
+  static GL_SRC_ALPHA: 0x302;
+  static GL_ONE_MINUS_SRC_ALPHA: 0x303;
+
+  static glDrawArrays(mode: number, first: number, count: number): void;
+  static glEnable(cap: number): void;
+  static glDisable(cap: number): void;
+  static glBlendFunc(sfactor: number, dfactor: number): void;
+  static glColor4f(r: number, g: number, b: number, a: number): void;
+  static glLineWidth(width: number): void;
+  static glBegin(mode: number): void;
+  static glVertex2i(x: number, y: number): void;
+  static glEnd(): void;
+}
 declare class JavaGL12 extends NotFullyTyped {}
 declare class JavaGL13 extends NotFullyTyped {}
 declare class JavaGL14 extends NotFullyTyped {}
-declare class JavaGL15 extends NotFullyTyped {}
-declare class JavaGL20 extends NotFullyTyped {}
+declare class JavaGL15 extends NotFullyTyped {
+  static GL_ARRAY_BUFFER: 0x8892;
+  static GL_STATIC_DRAW: 0x88e4;
+
+  static glGenBuffers(): number;
+  static glBindBuffer(target: number, buffer: number): void;
+  static glBufferData(target: number, data: any, usage: number): void;
+}
+declare class JavaGL20 extends NotFullyTyped {
+  static GL_VERTEX_SHADER: 0x8b31;
+  static GL_FRAGMENT_SHADER: 0x8b30;
+
+  static glCreateShader(type: number): number;
+  static glShaderSource(shader: number, source: string): void;
+  static glCompileShader(shader: number): void;
+  static glCreateProgram(): number;
+  static glAttachShader(program: number, shader: number): void;
+  static glLinkProgram(program: number): void;
+  static glUseProgram(program: number): void;
+  static glDeleteShader(shader: number): void;
+  static glVertexAttribPointer(
+    index: number,
+    size: number,
+    type: number,
+    normalized: boolean,
+    stride: number,
+    pointer: number,
+  ): void;
+  static glEnableVertexAttribArray(index: number): void;
+}
 declare class JavaGL21 extends NotFullyTyped {}
-declare class JavaGL30 extends NotFullyTyped {}
+declare class JavaGL30 extends NotFullyTyped {
+  static glGenVertexArrays(): number;
+  static glBindVertexArray(array: number): void;
+}
 declare class JavaGL31 extends NotFullyTyped {}
 declare class JavaGL32 extends NotFullyTyped {}
 declare class JavaGL33 extends NotFullyTyped {}
